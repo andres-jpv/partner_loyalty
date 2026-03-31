@@ -1,12 +1,5 @@
 from odoo import api, fields, models
 
-RANK_MAP = {
-    'Bronce': 'bronze',
-    'Plata': 'silver',
-    'Oro': 'gold',
-    'Platino': 'platinum',
-}
-
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
@@ -31,9 +24,8 @@ class ResPartner(models.Model):
         for partner in self:
             for rank in ranks:
                 if rank.min_points <= partner.loyalty_points <= rank.max_points:
-                    level = RANK_MAP.get(rank.name, 'bronze')
-                    if partner.loyalty_level != level:
-                        partner.loyalty_level = level
+                    if partner.loyalty_level != rank.level_key:
+                        partner.loyalty_level = rank.level_key
                     break
 
     def write(self, vals):

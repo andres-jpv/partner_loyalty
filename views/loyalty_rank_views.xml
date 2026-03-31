@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <list string="Rangos de Fidelidad" editable="bottom">
                 <field name="name"/>
+                <field name="level_key"/>
                 <field name="min_points"/>
                 <field name="max_points"/>
             </list>
@@ -24,6 +25,7 @@
                     <group>
                         <group>
                             <field name="name"/>
+                            <field name="level_key"/>
                         </group>
                         <group>
                             <field name="min_points"/>

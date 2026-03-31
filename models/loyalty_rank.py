@@ -10,6 +10,16 @@ class LoyaltyRank(models.Model):
         string='Nombre del Rango',
         required=True,
     )
+    level_key = fields.Selection(
+        selection=[
+            ('bronze', 'Bronce'),
+            ('silver', 'Plata'),
+            ('gold', 'Oro'),
+            ('platinum', 'Platino'),
+        ],
+        string='Nivel',
+        required=True,
+    )
     min_points = fields.Integer(
         string='Puntos Mínimos',
         required=True,

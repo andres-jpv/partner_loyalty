@@ -17,6 +17,6 @@ class UpdateLoyaltyPoints(models.TransientModel):
             raise UserError('No se han seleccionado contactos.')
         partners = self.env['res.partner'].browse(active_ids)
         for partner in partners:
-            new_points = partner.loyalty_points + self.points_to_add
-            partner.loyalty_points = max(new_points, 0)
+            new_points = max(partner.loyalty_points + self.points_to_add, 0)
+            partner.write({'loyalty_points': new_points})
         return {'type': 'ir.actions.act_window_close'}
