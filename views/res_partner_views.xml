@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Herencia: Vista Formulario - Pestaña Fidelidad -->
+    <record id="view_partner_form_loyalty" model="ir.ui.view">
+        <field name="name">res.partner.form.loyalty</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Fidelidad" name="loyalty">
+                    <group>
+                        <group>
+                            <field name="loyalty_level"/>
+                        </group>
+                        <group>
+                            <field name="loyalty_points"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Herencia: Vista Lista - Columna Nivel de Fidelidad -->
+    <record id="view_partner_tree_loyalty" model="ir.ui.view">
+        <field name="name">res.partner.list.loyalty</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='phone']" position="after">
+                <field name="loyalty_level" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Acción: Clientes VIP (Oro y Platino) -->
+    <record id="action_partner_vip" model="ir.actions.act_window">
+        <field name="name">Clientes VIP</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,kanban,form</field>
+        <field name="domain">[('loyalty_level', 'in', ['gold', 'platinum'])]</field>
+        <field name="context">{'default_is_company': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No hay clientes VIP aún.
+            </p>
+            <p>
+                Los clientes con nivel de fidelidad Oro o Platino aparecerán aquí.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menú: Clientes VIP bajo Contactos -->
+    <menuitem id="menu_partner_vip"
+        name="Clientes VIP"
+        action="action_partner_vip"
+        parent="contacts.menu_contacts"
+        sequence="3"/>
+
+</odoo>

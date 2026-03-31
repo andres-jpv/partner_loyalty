@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_partner_loyalty_update_points,partner.loyalty.update.points,model_partner_loyalty_update_points,base.group_user,1,1,1,1
+access_partner_loyalty_rank,partner.loyalty.rank,model_partner_loyalty_rank,base.group_user,1,1,1,1

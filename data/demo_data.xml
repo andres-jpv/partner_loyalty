@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Clientes Platino -->
+        <record id="partner_vip_maria" model="res.partner">
+            <field name="name">María González López</field>
+            <field name="email">maria.gonzalez@example.com</field>
+            <field name="phone">+593 99 123 4567</field>
+            <field name="is_company" eval="False"/>
+            <field name="loyalty_level">platinum</field>
+            <field name="loyalty_points">1500</field>
+        </record>
+
+        <record id="partner_vip_carlos" model="res.partner">
+            <field name="name">Carlos Ramírez Torres</field>
+            <field name="email">carlos.ramirez@example.com</field>
+            <field name="phone">+593 98 765 4321</field>
+            <field name="is_company" eval="False"/>
+            <field name="loyalty_level">platinum</field>
+            <field name="loyalty_points">2200</field>
+        </record>
+
+        <!-- Clientes Oro -->
+        <record id="partner_vip_ana" model="res.partner">
+            <field name="name">Ana Lucía Mendoza</field>
+            <field name="email">ana.mendoza@example.com</field>
+            <field name="phone">+593 97 555 1234</field>
+            <field name="is_company" eval="False"/>
+            <field name="loyalty_level">gold</field>
+            <field name="loyalty_points">850</field>
+        </record>
+
+        <record id="partner_vip_roberto" model="res.partner">
+            <field name="name">Roberto Castillo Vera</field>
+            <field name="email">roberto.castillo@example.com</field>
+            <field name="phone">+593 96 444 5678</field>
+            <field name="is_company" eval="False"/>
+            <field name="loyalty_level">gold</field>
+            <field name="loyalty_points">600</field>
+        </record>
+
+        <!-- Clientes Plata -->
+        <record id="partner_silver_lucia" model="res.partner">
+            <field name="name">Lucía Fernández Paredes</field>
+            <field name="email">lucia.fernandez@example.com</field>
+            <field name="phone">+593 95 333 9876</field>
+            <field name="is_company" eval="False"/>
+            <field name="loyalty_level">silver</field>
+            <field name="loyalty_points">300</field>
+        </record>
+
+        <!-- Clientes Bronce -->
+        <record id="partner_bronze_pedro" model="res.partner">
+            <field name="name">Pedro Álvarez Suárez</field>
+            <field name="email">pedro.alvarez@example.com</field>
+            <field name="phone">+593 94 222 3456</field>
+            <field name="is_company" eval="False"/>
+            <field name="loyalty_level">bronze</field>
+            <field name="loyalty_points">50</field>
+        </record>
+
+    </data>
+</odoo>

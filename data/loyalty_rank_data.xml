@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="rank_bronze" model="partner.loyalty.rank">
+            <field name="name">Bronce</field>
+            <field name="min_points">0</field>
+            <field name="max_points">100</field>
+        </record>
+
+        <record id="rank_silver" model="partner.loyalty.rank">
+            <field name="name">Plata</field>
+            <field name="min_points">101</field>
+            <field name="max_points">500</field>
+        </record>
+
+        <record id="rank_gold" model="partner.loyalty.rank">
+            <field name="name">Oro</field>
+            <field name="min_points">501</field>
+            <field name="max_points">1000</field>
+        </record>
+
+        <record id="rank_platinum" model="partner.loyalty.rank">
+            <field name="name">Platino</field>
+            <field name="min_points">1001</field>
+            <field name="max_points">999999</field>
+        </record>
+
+    </data>
+</odoo>

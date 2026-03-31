@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_loyalty_card" model="ir.actions.report">
+        <field name="name">Ficha de Fidelidad</field>
+        <field name="model">res.partner</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">partner_loyalty.report_loyalty_card</field>
+        <field name="report_file">partner_loyalty.report_loyalty_card</field>
+        <field name="print_report_name">'Ficha de Fidelidad - %s' % object.name</field>
+        <field name="binding_model_id" ref="base.model_res_partner"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

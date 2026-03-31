@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Vista Lista de Rangos -->
+    <record id="view_loyalty_rank_tree" model="ir.ui.view">
+        <field name="name">partner.loyalty.rank.list</field>
+        <field name="model">partner.loyalty.rank</field>
+        <field name="arch" type="xml">
+            <list string="Rangos de Fidelidad" editable="bottom">
+                <field name="name"/>
+                <field name="min_points"/>
+                <field name="max_points"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista Formulario de Rangos -->
+    <record id="view_loyalty_rank_form" model="ir.ui.view">
+        <field name="name">partner.loyalty.rank.form</field>
+        <field name="model">partner.loyalty.rank</field>
+        <field name="arch" type="xml">
+            <form string="Rango de Fidelidad">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="min_points"/>
+                            <field name="max_points"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción de Rangos -->
+    <record id="action_loyalty_rank" model="ir.actions.act_window">
+        <field name="name">Rangos de Fidelidad</field>
+        <field name="res_model">partner.loyalty.rank</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea tu primer rango de fidelidad.
+            </p>
+            <p>
+                Define los rangos de puntos para cada nivel de fidelidad.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menú Rangos bajo Contactos -->
+    <menuitem id="menu_loyalty_rank"
+        name="Rangos de Fidelidad"
+        action="action_loyalty_rank"
+        parent="contacts.menu_contacts"
+        sequence="4"/>
+
+</odoo>
